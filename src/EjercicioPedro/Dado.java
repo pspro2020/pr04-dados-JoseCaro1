@@ -3,18 +3,18 @@ package EjercicioPedro;
 import java.util.Random;
 
 public class Dado {
-    private static int dado1 = 0;
-    private static int dado2 = 0;
-    private static int dado3 = 0;
-    private static int dado4 = 0;
-    private static int dado5 = 0;
-    private static int dado6 = 0;
+    private  int dado1 = 0;
+    private  int dado2 = 0;
+    private  int dado3 = 0;
+    private  int dado4 = 0;
+    private  int dado5 = 0;
+    private  int dado6 = 0;
 
-    private Dado() {
+     Dado() {
 
     }
 
-    protected static int lanzarDado() {
+    protected int lanzarDado() {
         Random random = new Random();
 
         return random.nextInt(6) + 1;
@@ -22,7 +22,7 @@ public class Dado {
 
     }
 
-    protected static synchronized void aumentarContador(int num) {
+    protected synchronized void aumentarContador(int num) {
         if (num == 1) {
             dado1++;
         } else if (num == 2) {
@@ -38,7 +38,7 @@ public class Dado {
         }
     }
 
-    public static void showCounters(){
+    public void showCounters(){
         double total=dado1+dado2+dado3+dado4+dado5+dado6;
         System.out.printf("Número 1: %d veces\n" +
                 "Número 2: %d veces\n" +

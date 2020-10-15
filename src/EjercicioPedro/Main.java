@@ -4,9 +4,10 @@ public class Main {
 
 
     public static void main(String[] args) throws InterruptedException {
-        Thread hiloDado1 = new Thread(new Tiradas(), "Thread 1");
-        Thread hiloDado2 = new Thread(new Tiradas(), "Thread 2");
-        Thread hiloDado3 = new Thread(new Tiradas(), "Thread 3");
+        Dado dado1 = new Dado();
+        Thread hiloDado1 = new Thread(new Tiradas(dado1), "Thread 1");
+        Thread hiloDado2 = new Thread(new Tiradas(dado1), "Thread 2");
+        Thread hiloDado3 = new Thread(new Tiradas(dado1), "Thread 3");
 
         hiloDado1.start();
         hiloDado2.start();
@@ -19,7 +20,8 @@ public class Main {
         hiloDado2.interrupt();
         hiloDado3.interrupt();
 
-        Dado.showCounters();
+        dado1.showCounters();
+
 
     }
 
